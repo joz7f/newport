@@ -1,0 +1,531 @@
+
+/* =========================================
+   1. GLOBAL STYLES
+========================================= */
+
+:root {
+  /* Semantic color aliases */
+  --hero-accent: var(--color-green-500, #70e317);
+  --text-primary: var(--color-foundation-black, #161616);
+  --surface-primary: var(--color-foundation-white, #ffffff);
+  --border-color: var(--color-grey-300, #cccccc);
+
+  /* Layout tokens */
+  --layout-margin: 20px;
+  --layout-gutter: 20px;
+
+  /* Hero dimensions */
+  --hero-height: 708px;
+  --hero-image-width: 525px;
+  --hero-image-height: 707px;
+  --hero-content-width: 370px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--surface-primary);
+  color: var(--text-primary);
+  font-family: var(--font-body), sans-serif;
+  position: relative;
+}
+
+
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.container {
+  width: calc(100% - 2 * var(--layout-margin));
+  max-width: 1240px;
+  margin-inline: auto;
+}
+
+
+/* =========================================
+   2. HERO SECTION
+========================================= */
+
+.hero {
+  height: var(--hero-height);
+  min-height: var(--hero-height);
+  position: relative;
+  isolation: isolate;
+  overflow: visible;
+}
+
+/* Vertical line */
+.hero::before {
+  content: "";
+  position: absolute;
+
+  top: 0;
+  bottom: 0;
+  left: 18%;
+
+  width: 1px;
+  background: #000;
+
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Horizontal line — full viewport width */
+.hero::after {
+  content: "";
+  position: absolute;
+
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+
+  width: 100vw;
+  height: 1px;
+  background: #000;
+
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* =========================================
+   3. NAVIGATION
+========================================= */
+
+.navbar {
+  position: absolute;
+  z-index: 10;
+
+  top: 28px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  width: 381px;
+  height: 72px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+
+  background: var(--surface-primary);
+  border: 1px solid var(--color-grey-200, #eeeeee);
+  border-radius: 40px;
+
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.10);
+}
+
+.navbar nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+}
+
+.navbar a {
+  font: var(--type-desktop-paragraph-medium-regular);
+  white-space: nowrap;
+}
+
+/* Active navigation link */
+.nav-link.active {
+  background-color: var(--color-green-500);
+  color: var(--color-foundation-black);
+  border-radius: 50%;
+
+  width: 48px;
+  height: 48px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-link {
+  transition: background-color 0.3s ease,
+              color 0.3s ease;
+}
+
+.nav-link.active:hover {
+  background-color: var(--color-green-700);
+}
+
+
+/* =========================================
+   4. ID CARD IMAGE
+========================================= */
+
+.hero-visual {
+  position: absolute;
+
+  top: -10px;
+  left: -20px;
+
+  width: var(--hero-image-width);
+  height: var(--hero-image-height);
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.hero-visual img {
+  width: 100%;
+  height: 100%;
+  max-width: none;
+
+  object-fit: contain;
+
+  /* Pivot near the top of the lanyard */
+  transform-origin: 40% 3%;
+
+  animation: card-swing 5s ease-in-out infinite;
+}
+
+
+/* =========================================
+   5. ID CARD SWING
+========================================= */
+
+@keyframes card-swing {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  25% {
+    transform: rotate(2deg);
+  }
+
+  50% {
+    transform: rotate(0deg);
+  }
+
+  75% {
+    transform: rotate(2deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+
+/* =========================================
+   6. HERO CONTENT
+========================================= */
+
+.hero-content {
+  position: absolute;
+  left: 45%;
+  top: 60%;
+  width: 31%;
+  max-width: var(--hero-content-width);
+  transform: translateY(-50%);
+}
+
+.hero-visual {
+  transform-origin: top center;
+  animation: card-swing 4s ease-in-out infinite;
+}
+
+/* Heading */
+
+.hero-content h1,
+.hero-title {
+  margin: 0;
+  font-family: 'Sora', sans-serif;
+  font-size: 76px;
+  font-weight: 900;
+  line-height: 0.85;
+  color: var(--color-green-500, #70e317);
+}
+
+.hero-heading {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  width: 100%;
+}
+
+
+/* =========================================
+   HERO SECONDARY HEADING — TICKING ANIMATION
+========================================= */
+
+.hero-heading-secondary {
+  display: flex;
+  align-items: center;
+  font-family: 'Sora', sans-serif;
+  font-size: 40px;
+  font-weight: 200;
+  color: var(--color-dark-blue-900);
+}
+
+/* Vertical words */
+.word-ticker-track {
+  display: flex;
+  flex-direction: column;
+  animation: word-tick 6s infinite;
+  will-change: transform;
+}
+
+.word-ticker-track span {
+  height: 48px;
+  line-height: 48px;
+  flex-shrink: 0;
+}
+
+.word-ticker {
+  height: 144px;
+  overflow: hidden;
+
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(0, 0, 0, 0.2) 18%,
+    black 38%,
+    black 62%,
+    rgba(0, 0, 0, 0.2) 82%,
+    transparent 100%
+  );
+
+  mask-image: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(0, 0, 0, 0.2) 18%,
+    black 38%,
+    black 62%,
+    rgba(0, 0, 0, 0.2) 82%,
+    transparent 100%
+  );
+}
+
+/* Three positions, with a 200ms upward tick */
+@keyframes word-tick {
+  0%, 30% {
+    transform: translateY(0);
+  }
+
+  33.333%, 63.333% {
+    transform: translateY(-48px);
+  }
+
+  66.667%, 96.667% {
+    transform: translateY(-96px);
+  }
+
+  100% {
+    transform: translateY(-144px);
+  }
+}
+
+/* Mobile */
+@media (max-width: 500px) {
+  .word-ticker {
+    height: 84px;
+  }
+
+  .word-ticker-track span {
+    height: 28px;
+    line-height: 28px;
+  }
+
+  .word-ticker-track {
+    animation-name: word-tick-mobile;
+  }
+
+  @keyframes word-tick-mobile {
+    0%, 30% {
+      transform: translateY(0);
+    }
+
+    33.333%, 63.333% {
+      transform: translateY(-28px);
+    }
+
+    66.667%, 96.667% {
+      transform: translateY(-56px);
+    }
+
+    100% {
+      transform: translateY(-84px);
+    }
+  }
+}
+
+/* Description */
+
+.hero-description {
+  margin: 24px 0 0;
+
+  font: var(--type-desktop-paragraph-large-medium);
+  color: var(--text-primary);
+}
+
+
+/* =========================================
+   7. HIRE ME BUTTON
+========================================= */
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  min-height: 48px;
+
+  margin-top: 40px;
+
+  background: var(--surface-primary);
+  color: var(--text-primary);
+
+  border: 1px solid var(--color-grey-800, #999999);
+  border-radius: 20px;
+
+  font: var(--type-desktop-paragraph-large-medium);
+
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.button:hover {
+  background: var(--hero-accent);
+  border-color: var(--hero-accent);
+  color: var(--text-primary);
+}
+
+
+/* =========================================
+   8. ACCESSIBILITY
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-visual img {
+    animation: none;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+
+/* =========================================
+   9. MOBILE — 500PX AND BELOW
+========================================= */
+
+@media (max-width: 500px) {
+
+  .hero {
+    height: auto;
+    min-height: 0;
+
+    padding-top: 110px;
+    padding-bottom: 40px;
+  }
+
+  .navbar {
+    top: 16px;
+
+    width: calc(100% - 40px);
+    max-width: 381px;
+    height: 60px;
+
+    padding: 0 12px;
+  }
+
+  .navbar nav {
+    gap: 20px;
+  }
+
+  .navbar a {
+    font: var(--type-desktop-paragraph-small-regular);
+  }
+
+  .hero-visual {
+    position: relative;
+
+    top: auto;
+    left: auto;
+
+    width: 100%;
+    height: auto;
+
+    justify-content: center;
+  }
+
+  .hero-visual img {
+    width: 100%;
+    max-width: 350px;
+    height: auto;
+
+    transform-origin: 40% 3%;
+  }
+
+  .hero-content {
+    position: relative;
+
+    top: auto;
+    left: auto;
+
+    width: 100%;
+    max-width: 370px;
+
+    margin: 30px auto 0;
+    padding: 0 10px;
+  }
+
+  .hero-content h1 {
+    font: var(--type-desktop-h1-bold);
+    /* Keep the deliberate tighter heading line spacing on mobile too. */
+    line-height: 0.85;
+  }
+
+  .hero-description {
+    margin-top: 20px;
+    font: var(--type-desktop-paragraph-medium-regular);
+  }
+
+  .button {
+    margin-top: 28px;
+    font: var(--type-desktop-paragraph-large-regular);
+  }
+}
+
+/* Hero layout guide lines */
+.hero {
+  position: relative;
+  isolation: isolate;
+}
+
+
+.hero-content,
+.hero-visual,
+.navbar {
+  z-index: 1;
+}
+
+.navbar {
+  z-index: 10;
+}
+
