@@ -1,0 +1,27 @@
+{
+  "Heading": {
+    "$type": "string",
+    "$value": "Sora",
+    "$extensions": {
+      "com.figma.variableId": "VariableID:68:6",
+      "com.figma.scopes": [
+        "FONT_FAMILY"
+      ],
+      "com.figma.type": "string"
+    }
+  },
+  "Body": {
+    "$type": "string",
+    "$value": "DM Sans",
+    "$extensions": {
+      "com.figma.variableId": "VariableID:68:7",
+      "com.figma.scopes": [
+        "FONT_FAMILY"
+      ],
+      "com.figma.type": "string"
+    }
+  },
+  "$extensions": {
+    "com.figma.modeName": "Mode 1"
+  }
+}

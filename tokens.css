@@ -1,0 +1,211 @@
+
+/* =========================================
+   JOSEPH THOMAS — DESIGN TOKENS
+   Source: Figma design system
+========================================= */
+
+:root {
+  /* =====================================
+     COLORS
+  ===================================== */
+
+  --color-foundation-black: #161616;
+  --color-foundation-white: #FFFFFF;
+
+  /* Dark blue */
+  --color-dark-blue-100: #CFD7E5;
+  --color-dark-blue-200: #9FAFCB;
+  --color-dark-blue-300: #7086B1;
+  --color-dark-blue-400: #405E97;
+  --color-dark-blue-500: #10367D;
+  --color-dark-blue-600: #0D2B64;
+  --color-dark-blue-700: #0A204B;
+  --color-dark-blue-800: #061632;
+  --color-dark-blue-900: #030B19;
+
+  /* Green */
+  --color-green-100: #E9FCD4;
+  --color-green-200: #D3F9AA;
+  --color-green-300: #BDF67F;
+  --color-green-400: #A6F355;
+  --color-green-500: #90F02A;
+  --color-green-600: #73C022;
+  --color-green-700: #579019;
+  --color-green-800: #3A6011;
+  --color-green-900: #1D3008;
+
+  /* Blue */
+  --color-blue-100: #D2DCFC;
+  --color-blue-200: #A5B9F9;
+  --color-blue-300: #7996F7;
+  --color-blue-400: #4C73F4;
+  --color-blue-500: #1F50F1;
+  --color-blue-600: #1940C1;
+  --color-blue-700: #133091;
+  --color-blue-800: #0C2060;
+  --color-blue-900: #061030;
+
+  /* Orange */
+  --color-orange-100: #FEE0CD;
+  --color-orange-200: #FDC19B;
+  --color-orange-300: #FDA168;
+  --color-orange-400: #FC8236;
+  --color-orange-500: #FB6304;
+  --color-orange-600: #C94F03;
+  --color-orange-700: #973B02;
+  --color-orange-800: #642802;
+  --color-orange-900: #321401;
+
+  /* Grey */
+  --color-grey-100: #F5F5F5;
+  --color-grey-200: #EBEBEB;
+  --color-grey-300: #E2E2E2;
+  --color-grey-400: #D8D8D8;
+  --color-grey-500: #CECECE;
+  --color-grey-600: #A5A5A5;
+  --color-grey-700: #7C7C7C;
+  --color-grey-800: #525252;
+  --color-grey-900: #292929;
+
+
+  /* =====================================
+     FONT FAMILIES
+  ===================================== */
+
+  --font-heading: "Sora", sans-serif;
+  --font-body: "DM Sans", sans-serif;
+
+  /* =====================================
+     COMBINED TYPOGRAPHY TOKENS
+     Format: font-weight font-size/line-height font-family
+     Headings use Sora; paragraphs and captions use DM Sans.
+  ===================================== */
+
+  --type-desktop-h1-extra-bold: 800 76px/92px var(--font-heading);
+  --type-desktop-h1-bold: 700 76px/92px var(--font-heading);
+  --type-desktop-h1-medium: 500 76px/92px var(--font-heading);
+  --type-desktop-h1-regular: 400 76px/92px var(--font-heading);
+  --type-desktop-h1-light: 300 76px/92px var(--font-heading);
+  --type-desktop-h1-extra-light: 200 76px/92px var(--font-heading);
+  --type-desktop-h2-extra-bold: 800 60px/72px var(--font-heading);
+  --type-desktop-h2-bold: 700 60px/72px var(--font-heading);
+  --type-desktop-h2-medium: 500 60px/72px var(--font-heading);
+  --type-desktop-h2-regular: 400 60px/72px var(--font-heading);
+  --type-desktop-h2-light: 300 60px/72px var(--font-heading);
+  --type-desktop-h2-extra-light: 200 60px/72px var(--font-heading);
+  --type-desktop-h3-extra-bold: 800 48px/56px var(--font-heading);
+  --type-desktop-h3-bold: 700 48px/56px var(--font-heading);
+  --type-desktop-h3-medium: 500 48px/56px var(--font-heading);
+  --type-desktop-h3-regular: 400 48px/56px var(--font-heading);
+  --type-desktop-h3-light: 300 48px/56px var(--font-heading);
+  --type-desktop-h3-extra-light: 200 48px/56px var(--font-heading);
+  --type-desktop-h4-extra-bold: 800 40px/48px var(--font-heading);
+  --type-desktop-h4-bold: 700 40px/48px var(--font-heading);
+  --type-desktop-h4-medium: 500 40px/48px var(--font-heading);
+  --type-desktop-h4-regular: 400 40px/48px var(--font-heading);
+  --type-desktop-h4-light: 300 40px/48px var(--font-heading);
+  --type-desktop-h4-extra-light: 200 40px/48px var(--font-body);
+  --type-desktop-h5-extra-bold: 800 32px/40px var(--font-heading);
+  --type-desktop-h5-bold: 700 32px/40px var(--font-heading);
+  --type-desktop-h5-medium: 500 32px/40px var(--font-heading);
+  --type-desktop-h5-regular: 400 32px/40px var(--font-heading);
+  --type-desktop-h5-light: 300 32px/40px var(--font-heading);
+  --type-desktop-h5-extra-light: 200 32px/40px var(--font-heading);
+  --type-desktop-h6-extra-bold: 800 24px/28px var(--font-heading);
+  --type-desktop-h6-bold: 700 24px/28px var(--font-heading);
+  --type-desktop-h6-medium: 500 24px/28px var(--font-heading);
+  --type-desktop-h6-regular: 400 24px/28px var(--font-heading);
+  --type-desktop-h6-light: 300 24px/28px var(--font-heading);
+  --type-desktop-h6-extra-light: 200 24px/28px var(--font-heading);
+  --type-desktop-paragraph-large-extra-bold: 800 20px/24px var(--font-body);
+  --type-desktop-paragraph-large-bold: 700 20px/24px var(--font-body);
+  --type-desktop-paragraph-large-medium: 500 20px/24px var(--font-body);
+  --type-desktop-paragraph-large-regular: 400 20px/24px var(--font-body);
+  --type-desktop-paragraph-large-light: 300 20px/24px var(--font-body);
+  --type-desktop-paragraph-large-extra-light: 200 20px/24px var(--font-body);
+  --type-desktop-paragraph-medium-extra-bold: 800 16px/20px var(--font-body);
+  --type-desktop-paragraph-medium-bold: 700 16px/20px var(--font-body);
+  --type-desktop-paragraph-medium-medium: 500 16px/20px var(--font-body);
+  --type-desktop-paragraph-medium-regular: 400 16px/20px var(--font-body);
+  --type-desktop-paragraph-medium-light: 300 16px/20px var(--font-body);
+  --type-desktop-paragraph-medium-extra-light: 200 16px/20px var(--font-body);
+  --type-desktop-paragraph-small-extra-bold: 800 14px/16px var(--font-body);
+  --type-desktop-paragraph-small-bold: 700 14px/16px var(--font-body);
+  --type-desktop-paragraph-small-medium: 500 14px/16px var(--font-body);
+  --type-desktop-paragraph-small-regular: 400 14px/16px var(--font-body);
+  --type-desktop-paragraph-small-light: 300 14px/16px var(--font-body);
+  --type-desktop-paragraph-small-extra-light: 200 14px/16px var(--font-body);
+  --type-desktop-caption-extra-bold: 800 12px/16px var(--font-body);
+  --type-desktop-caption-bold: 700 12px/16px var(--font-body);
+  --type-desktop-caption-medium: 500 12px/16px var(--font-body);
+  --type-desktop-caption-regular: 400 12px/16px var(--font-body);
+  --type-desktop-caption-light: 300 12px/16px var(--font-body);
+  --type-desktop-caption-extra-light: 200 12px/16px var(--font-body);
+
+}
+
+/* Mobile typography overrides — activated at 500px and below */
+@media (max-width: 500px) {
+  :root {
+    --type-desktop-h1-extra-bold: 800 40px/48px var(--font-heading);
+    --type-desktop-h1-bold: 700 40px/48px var(--font-heading);
+    --type-desktop-h1-medium: 500 40px/48px var(--font-heading);
+    --type-desktop-h1-regular: 400 40px/48px var(--font-heading);
+    --type-desktop-h1-light: 300 40px/48px var(--font-heading);
+    --type-desktop-h1-extra-light: 200 40px/48px var(--font-heading);
+    --type-desktop-h2-extra-bold: 800 32px/40px var(--font-heading);
+    --type-desktop-h2-bold: 700 32px/40px var(--font-heading);
+    --type-desktop-h2-medium: 500 32px/40px var(--font-heading);
+    --type-desktop-h2-regular: 400 32px/40px var(--font-heading);
+    --type-desktop-h2-light: 300 32px/40px var(--font-heading);
+    --type-desktop-h2-extra-light: 200 32px/40px var(--font-heading);
+    --type-desktop-h3-extra-bold: 800 28px/36px var(--font-heading);
+    --type-desktop-h3-bold: 700 28px/36px var(--font-heading);
+    --type-desktop-h3-medium: 500 28px/36px var(--font-heading);
+    --type-desktop-h3-regular: 400 28px/36px var(--font-heading);
+    --type-desktop-h3-light: 300 28px/36px var(--font-heading);
+    --type-desktop-h3-extra-light: 200 28px/36px var(--font-heading);
+    --type-desktop-h4-extra-bold: 800 24px/28px var(--font-heading);
+    --type-desktop-h4-bold: 700 24px/28px var(--font-heading);
+    --type-desktop-h4-medium: 500 24px/28px var(--font-heading);
+    --type-desktop-h4-regular: 400 24px/28px var(--font-heading);
+    --type-desktop-h4-light: 300 24px/28px var(--font-heading);
+    --type-desktop-h4-extra-light: 200 24px/28px var(--font-heading);
+    --type-desktop-h5-extra-bold: 800 20px/24px var(--font-heading);
+    --type-desktop-h5-bold: 700 20px/24px var(--font-heading);
+    --type-desktop-h5-medium: 500 20px/24px var(--font-heading);
+    --type-desktop-h5-regular: 400 20px/24px var(--font-heading);
+    --type-desktop-h5-light: 300 20px/24px var(--font-heading);
+    --type-desktop-h5-extra-light: 200 20px/24px var(--font-heading);
+    --type-desktop-h6-extra-bold: 800 18px/24px var(--font-heading);
+    --type-desktop-h6-bold: 700 18px/24px var(--font-heading);
+    --type-desktop-h6-medium: 500 18px/24px var(--font-heading);
+    --type-desktop-h6-regular: 400 18px/24px var(--font-heading);
+    --type-desktop-h6-light: 300 18px/24px var(--font-heading);
+    --type-desktop-h6-extra-light: 200 18px/24px var(--font-heading);
+    --type-desktop-paragraph-large-extra-bold: 800 18px/24px var(--font-body);
+    --type-desktop-paragraph-large-bold: 700 18px/24px var(--font-body);
+    --type-desktop-paragraph-large-medium: 500 18px/24px var(--font-body);
+    --type-desktop-paragraph-large-regular: 400 18px/24px var(--font-body);
+    --type-desktop-paragraph-large-light: 300 18px/24px var(--font-body);
+    --type-desktop-paragraph-large-extra-light: 200 18px/24px var(--font-body);
+    --type-desktop-paragraph-medium-extra-bold: 800 16px/20px var(--font-body);
+    --type-desktop-paragraph-medium-bold: 700 16px/20px var(--font-body);
+    --type-desktop-paragraph-medium-medium: 500 16px/20px var(--font-body);
+    --type-desktop-paragraph-medium-regular: 400 16px/20px var(--font-body);
+    --type-desktop-paragraph-medium-light: 300 16px/20px var(--font-body);
+    --type-desktop-paragraph-medium-extra-light: 200 16px/20px var(--font-body);
+    --type-desktop-paragraph-small-extra-bold: 800 14px/16px var(--font-body);
+    --type-desktop-paragraph-small-bold: 700 14px/16px var(--font-body);
+    --type-desktop-paragraph-small-medium: 500 14px/16px var(--font-body);
+    --type-desktop-paragraph-small-regular: 400 14px/16px var(--font-body);
+    --type-desktop-paragraph-small-light: 300 14px/16px var(--font-body);
+    --type-desktop-paragraph-small-extra-light: 200 14px/16px var(--font-body);
+    --type-desktop-caption-extra-bold: 800 12px/16px var(--font-body);
+    --type-desktop-caption-bold: 700 12px/16px var(--font-body);
+    --type-desktop-caption-medium: 500 12px/16px var(--font-body);
+    --type-desktop-caption-regular: 400 12px/16px var(--font-body);
+    --type-desktop-caption-light: 300 12px/16px var(--font-body);
+    --type-desktop-caption-extra-light: 200 12px/16px var(--font-body);
+  }
+}
