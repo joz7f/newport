@@ -70,17 +70,15 @@ a {
 }
 
 /* Vertical line */
+
 .hero::before {
   content: "";
   position: absolute;
-
   top: 0;
-  bottom: 0;
-  left: 18%;
-
+  bottom: -500px; /* Extends line 500px further down */
+  left: 17%;
   width: 1px;
   background: #000;
-
   pointer-events: none;
   z-index: 0;
 }
@@ -919,3 +917,305 @@ a {
     aspect-ratio: 1 / 1;
   }
 }
+
+
+
+/* =========================================
+   CONTACT SECTION
+========================================= */
+
+.contact-section {
+  width: 100%;
+  position: relative;
+  box-sizing: border-box;
+
+  background: var(--color-foundation-white);
+
+  /* Horizontal frame lines */
+  border-top: 1px solid var(--color-grey-700);
+  border-bottom: 1px solid var(--color-grey-700);
+}
+
+
+/* =========================================
+   CONTACT CONTAINER
+========================================= */
+
+
+.contact-container {
+  width: 100%;
+  max-width: 820px;
+  box-sizing: border-box;
+
+  margin: 0 auto;
+  padding: 80px 24px;
+
+  position: relative;
+
+  /* Remove the previous border-right */
+  border-right: none;
+}
+
+/* Extend vertical line above the contact section */
+
+.contact-container::after {
+  content: "";
+
+  position: absolute;
+
+  right: 0;
+  top: -120px; /* How far the line extends upward */
+
+  width: .5px;
+  height: calc(100% + 120px);
+
+  background: var(--color-grey-900);
+
+  pointer-events: none;
+}
+
+
+/* =========================================
+   CONTACT HEADER
+========================================= */
+
+.contact-header {
+  margin-bottom: 40px;
+}
+
+.contact-header h2 {
+  margin: 0 0 8px;
+
+  font: var(--type-desktop-h4-medium);
+
+  color: var(--color-foundation-black);
+}
+
+.contact-header p {
+  margin: 0;
+
+  font: var(--type-desktop-paragraph-large-regular);
+
+  color: var(--color-foundation-black);
+}
+
+
+/* =========================================
+   CONTACT FORM
+========================================= */
+
+.contact-form {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+
+/* Name and email row */
+
+.contact-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 44px;
+}
+
+
+/* Individual form fields */
+
+.form-field {
+  width: 100%;
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+
+/* =========================================
+   FORM LABELS
+========================================= */
+
+.form-field label {
+  font: var(--type-desktop-paragraph-small-medium);
+
+  color: var(--color-grey-700);
+}
+
+
+/* =========================================
+   INPUTS, DROPDOWN AND TEXTAREA
+========================================= */
+
+.form-field input,
+.form-field select,
+.form-field textarea {
+  width: 100%;
+  box-sizing: border-box;
+
+  font: var(--type-desktop-paragraph-small-medium);
+
+  color: var(--color-foundation-black);
+  background: var(--color-foundation-white);
+
+  border: 1px solid var(--color-grey-700);
+  border-radius: 0;
+
+  outline: none;
+
+  transition: border-color 0.2s ease;
+}
+
+
+/* Text and email inputs */
+
+.form-field input {
+  height: 44px;
+  padding: 0 12px;
+}
+
+
+/* Project type dropdown */
+
+.form-field select {
+  height: 44px;
+  padding: 0 12px;
+
+  cursor: pointer;
+}
+
+
+/* Project description */
+
+.form-field textarea {
+  min-height: 120px;
+  padding: 12px;
+
+  resize: vertical;
+}
+
+
+/* Placeholder text */
+
+.form-field input::placeholder,
+.form-field textarea::placeholder {
+  color: var(--color-grey-700);
+  opacity: 1;
+}
+
+
+/* Input focus state */
+
+.form-field input:focus-visible,
+.form-field select:focus-visible,
+.form-field textarea:focus-visible {
+  border-color: var(--color-foundation-black);
+}
+
+
+/* =========================================
+   SUBMIT BUTTON
+========================================= */
+
+.contact-submit {
+  width: 100%;
+  max-width: 320px;
+  min-height: 48px;
+  box-sizing: border-box;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+
+  margin-top: 4px;
+  padding: 12px 20px;
+
+  font: var(--type-desktop-paragraph-medium-medium);
+
+  color: var(--color-foundation-black);
+  background: var(--color-green-500);
+
+  border: 1px solid var(--color-grey-700);
+  border-radius: 24px;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+
+/* Button hover */
+
+.contact-submit:hover {
+  background: var(--color-green-600);
+}
+
+
+/* Button active */
+
+.contact-submit:active {
+  transform: scale(0.98);
+}
+
+
+/* Button keyboard focus */
+
+.contact-submit:focus-visible {
+  outline: 2px solid var(--color-foundation-black);
+  outline-offset: 4px;
+}
+
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 820px) {
+
+  .contact-container {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  .contact-form-row {
+    gap: 24px;
+  }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+  .contact-container {
+    padding: 48px 20px;
+  }
+
+  .contact-header {
+    margin-bottom: 32px;
+  }
+
+  /* Stack name and email */
+
+  .contact-form-row {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  /* Full-width button */
+
+  .contact-submit {
+    max-width: 100%;
+  }
+
+}
+
