@@ -14,6 +14,10 @@
 
     <link rel="stylesheet" href="tokens.css">
     <link rel="stylesheet" href="style.css">
+    <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/lenis@1.3.11/dist/lenis.css"
+/>
 </head>
 
 <body>
@@ -72,8 +76,154 @@
     </div>
 
   </section>
-</main>
 
-    <script src="script.js"></script>
+  
+<!-- PROJECTS SECTION -->
+<section class="projects container" id="projects">
+
+  <h2 class="projects-heading">PROJECTS</h2>
+
+  
+<div class="projects-grid">
+
+  <!-- LEFT COLUMN -->
+  <div class="projects-column">
+
+    <!-- CARD 1 -->
+    <a href="#" class="project-card">
+      <img
+        src="assets/Images/card_1.webp"
+        alt="Project preview"
+        class="project-image"
+      >
+
+      <span class="project-view-cursor" aria-hidden="true">
+        <span class="cursor-text">View</span>
+      </span>
+
+      <div class="project-info">
+        <h3 class="project-title">
+          Analyser
+          <span class="project-subtitle">[Dashboard]</span>
+        </h3>
+
+        <div class="project-meta">
+          <span class="project-category">Case Study</span>
+          <span class="project-category">UI Design</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- CARD 3 -->
+    <a href="#" class="project-card project-card--three">
+     <img
+        src="assets/Images/card_3.webp"
+        alt="Project preview"
+        class="project-image"
+      >
+
+      <span class="project-view-cursor" aria-hidden="true">
+        <span class="cursor-text">View</span>
+      </span>
+
+      <div class="project-info">
+        <h3 class="project-title">
+          Project Three
+          <span class="project-subtitle">[Web Design]</span>
+        </h3>
+
+        <div class="project-meta">
+          <span class="project-category">Website</span>
+          <span class="project-category">UI Design</span>
+        </div>
+      </div>
+    </a>
+
+  </div>
+
+  <!-- RIGHT COLUMN -->
+  <div class="projects-column">
+
+    <!-- CARD 2 -->
+    <a href="#" class="project-card project-card--two">
+      <img
+        src="assets/Images/card_2.webp"
+        alt="Project preview"
+        class="project-image"
+      >
+
+      <span class="project-view-cursor" aria-hidden="true">
+        <span class="cursor-text">View</span>
+      </span>
+
+      <div class="project-info">
+        <h3 class="project-title">
+          Project Two
+          <span class="project-subtitle">[Mobile App]</span>
+        </h3>
+
+        <div class="project-meta">
+          <span class="project-category">Case Study</span>
+          <span class="project-category">UX Design</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- CARD 4 — TEXT ONLY -->
+    <div class="project-text-box">
+      <h2>
+       <span1> Not afraid to </span1>
+        <span2>BREAK</span2>
+        <span3>THE</span3> <span4> DESIGN RULES.</span4>
+      </h2>
+    </div>
+
+  </div>
+
+  <!-- CARD 5 — FULL WIDTH -->
+  <a href="#" class="project-card project-card--five">
+   <picture>
+  <!-- Mobile image (500px and below) -->
+  <source
+    media="(max-width: 600px)"
+    srcset="assets/Images/card_5_mobile.webp"
+  >
+
+  <!-- Desktop image -->
+  <img
+    src="assets/Images/card_5.webp"
+    alt="Featured project preview"
+    class="project-image"
+  >
+</picture>
+
+    <span class="project-view-cursor" aria-hidden="true">
+      <span class="cursor-text">View</span>
+    </span>
+
+    <div class="project-info">
+      <h3 class="project-title">
+        Project Five
+        <span class="project-subtitle">[Featured Project]</span>
+      </h3>
+
+      <div class="project-meta">
+        <span class="project-category">Case Study</span>
+        <span class="project-category">Experience Design</span>
+      </div>
+    </div>
+  </a>
+
+</div>
+
+</section>
+
+
+</main>
+  
+    <script src="https://cdn.jsdelivr.net/npm/lenis@1.3.11/dist/lenis.min.js"></script>
+    <script src="script.js" defer></script>
+    
+    
 </body>
 </html>
