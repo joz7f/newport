@@ -27,7 +27,7 @@
 }
 
 html {
-   scroll-behavior: auto;
+   scroll-behavior: smooth;
 }
 
 body {
@@ -106,7 +106,7 @@ a {
 
 .navbar {
   position: fixed;
-  z-index: 100;
+  z-index: 1000;
 
   top: 28px;
   left: 50%;
@@ -135,29 +135,40 @@ a {
 .navbar nav {
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: clamp(10px, 3vw, 32px);
+  justify-content: space-between;
+  gap: 4px;
   width: 100%;
+  padding-inline: 8px;
+  min-width: 0;
 }
 
 .navbar a {
   font: var(--type-desktop-paragraph-medium-regular);
   white-space: nowrap;
   flex-shrink: 0;
+  transition: color 0.2s ease, background-color 0.2s ease, transform 0.2s ease;
 }
 
-/* Active navigation link */
-.nav-link.active {
-  background-color: var(--color-green-500);
-  color: var(--color-foundation-black);
-  border-radius: 50%;
-
+.nav-home {
   width: 48px;
   height: 48px;
-
+  padding: 0;
+  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-shrink: 0;
+}
+
+/* JT stays circular; section links use padded rounded rectangles. */
+.nav-home.active,
+.navbar nav > a:not(.nav-home).active {
+  background-color: var(--color-green-500);
+  color: var(--color-foundation-black);
+}
+
+.navbar nav > a:not(.nav-home).active {
+  border-radius: 14px;
 }
 
 .nav-link {
@@ -165,8 +176,22 @@ a {
               color 0.3s ease;
 }
 
-.nav-link.active:hover {
-  background-color: var(--color-green-700);
+.navbar nav > a.active:hover {
+  background-color: var(--color-green-400);
+}
+
+.navbar nav > a:not(.nav-home) {
+  padding: 10px 12px;
+  border-radius: 16px;
+}
+
+.navbar nav > a:not(.nav-home):hover {
+  color: var(--color-green-700, #438d0e);
+}
+
+.navbar a:focus-visible {
+  outline: 2px solid var(--hero-accent);
+  outline-offset: 4px;
 }
 
 
@@ -456,8 +481,8 @@ a {
 
   .navbar nav {
     width: 100%;
-    justify-content: space-between;
-    gap: 8px;
+    gap: 4px;
+    padding-inline: 4px;
   }
 
   .navbar a {
@@ -466,7 +491,7 @@ a {
     white-space: nowrap;
   }
 
-  .nav-link.active {
+  .nav-home {
     width: 42px;
     height: 42px;
     flex-shrink: 0;
@@ -606,7 +631,7 @@ a {
     rgba(255, 255, 255, 1) 100%
   );
 
-  opacity: 1;
+  opacity: 0.6;
   transition: opacity 0.3s ease;
 
   pointer-events: none;
@@ -614,7 +639,7 @@ a {
 }
 
 .project-card:hover::after {
-  opacity: 0.3;
+  opacity: 0.1;
 }
 
 /* Project image */
@@ -1305,4 +1330,38 @@ a {
     line-height: 20px;
   }
 
+}
+
+/* Top fade */
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+
+  background: linear-gradient(
+    to bottom,
+    var(--color-foundation-white) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+
+  opacity: 0;
+  pointer-events: none;
+  z-index: 500;
+
+  transition: opacity 0.5s ease;
+
+  body:not(.scrolled)::before {
+  transition: none;
+  opacity: 0;
+}
+}
+
+/* Show fade after scrolling */
+
+body.scrolled::before {
+  opacity: 1;
 }

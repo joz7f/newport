@@ -50,18 +50,94 @@ document.querySelectorAll(".project-card").forEach((card) => {
   }
 });
 
-const lenis = new Lenis({
+const lenis = window.Lenis ? new Lenis({
   duration: 1,
   smoothWheel: true,
   wheelMultiplier: 1,
   touchMultiplier: 1,
   lerp: 0.3,
-});
+}) : null;
 
 function raf(time) {
-  lenis.raf(time);
+  if (lenis) lenis.raf(time);
   requestAnimationFrame(raf);
 }
 
-requestAnimationFrame(raf);
+if (lenis) requestAnimationFrame(raf);
 
+// Leave room for the fixed navbar when navigating to the contact section.
+document.querySelectorAll('a[href="#contact"]').forEach((link) => {
+  link.addEventListener("click", (event) => {
+    const contactSection = document.querySelector("#contact");
+    if (!contactSection) return;
+
+    event.preventDefault();
+    window.history.pushState(null, "", "#contact");
+    if (lenis) {
+      lenis.scrollTo(contactSection, { offset: -120 });
+    } else {
+      window.scrollTo({
+        top: window.scrollY + contactSection.getBoundingClientRect().top - 120,
+        behavior: "smooth",
+      });
+    }
+  });
+});
+
+// Keep the current section reflected in the fixed navigation.
+const sectionLinks = [...document.querySelectorAll('.navbar a[href^="#"]')];
+const navSections = sectionLinks
+  .map((link) => document.querySelector(link.getAttribute("href")))
+  .filter(Boolean);
+let activeSectionIndex = 0;
+
+function updateActiveNav() {
+  if (!navSections.length) return;
+
+  // Use a small hysteresis band so tiny scroll changes at a boundary do not
+  // rapidly flip the active item between adjacent sections.
+  const readingLine = window.innerHeight * 0.35;
+  const hysteresis = 24;
+
+  while (
+    activeSectionIndex < navSections.length - 1 &&
+    navSections[activeSectionIndex + 1].getBoundingClientRect().top < readingLine - hysteresis
+  ) {
+    activeSectionIndex += 1;
+  }
+
+  while (
+    activeSectionIndex > 0 &&
+    navSections[activeSectionIndex].getBoundingClientRect().top > readingLine + hysteresis
+  ) {
+    activeSectionIndex -= 1;
+  }
+
+  const currentSection = navSections[activeSectionIndex];
+
+  sectionLinks.forEach((link) => {
+    const isCurrent = link.hash === `#${currentSection.id}`;
+    link.classList.toggle("active", isCurrent);
+    if (isCurrent) link.setAttribute("aria-current", "location");
+    else link.removeAttribute("aria-current");
+  });
+}
+
+window.addEventListener("scroll", updateActiveNav, { passive: true });
+window.addEventListener("resize", updateActiveNav);
+updateActiveNav();
+
+// Top fade visibility
+
+function updateTopFade() {
+  document.body.classList.toggle(
+    "scrolled",
+    window.scrollY > 5
+  );
+}
+
+window.addEventListener("scroll", updateTopFade, {
+  passive: true
+});
+
+updateTopFade();

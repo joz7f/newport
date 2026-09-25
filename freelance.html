@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Freelance — Joseph Thomas</title>
+  <link rel="stylesheet" href="tokens.css">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .freelance-page { min-height: 100vh; padding: 150px 20px 80px; }
+    .freelance-content { max-width: 820px; margin: 0 auto; }
+    .freelance-content h1 { margin: 0 0 20px; font: var(--type-desktop-h1-extra-bold); }
+    .freelance-content p { max-width: 620px; font: var(--type-desktop-paragraph-large-regular); line-height: 1.6; }
+    .freelance-actions { display: flex; gap: 16px; margin-top: 32px; }
+    .freelance-actions .button { width: min(240px, 100%); margin: 0; }
+    @media (max-width: 600px) {
+      .freelance-page { padding-top: 130px; }
+      .freelance-content h1 { font-size: 40px; }
+      .freelance-actions { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+  <header class="navbar container">
+    <nav aria-label="Main navigation">
+      <a href="index.html#hero" class="nav-link nav-home">JT</a>
+      <a href="index.html#projects" class="nav-link">Projects</a>
+      <a href="freelance.html" class="nav-link active" aria-current="page">Freelance</a>
+      <a href="index.html#contact" class="nav-link">Contact</a>
+    </nav>
+  </header>
+  <main class="freelance-page">
+    <section class="freelance-content">
+      <h1>Freelance with Joseph</h1>
+      <p>I work with people and teams to shape clear, thoughtful digital experiences—from early ideas through polished UI and web design.</p>
+      <p>Have a project in mind? Share what you’re building and what you need help with.</p>
+      <div class="freelance-actions">
+        <a href="index.html#contact" class="button">Start a project</a>
+        <a href="index.html#projects" class="button">View projects</a>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
