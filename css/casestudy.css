@@ -617,3 +617,57 @@
   }
 
 }
+
+/* Scroll to Top Button */
+
+.scroll-to-top {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+
+  width: 48px;
+  height: 48px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: var(--color-dark-blue-900);
+  color: #ffffff;
+
+  border: none;
+  border-radius: 50%;
+
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 999;
+
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(12px);
+
+  transition: opacity 0.3s ease,
+              transform 0.3s ease,
+              visibility 0.3s ease;
+}
+
+.scroll-to-top.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.scroll-to-top:hover {
+  transform: translateY(-4px);
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .scroll-to-top {
+    width: 42px;
+    height: 42px;
+    right: 20px;
+    bottom: 20px;
+    font-size: 20px;
+  }
+}
