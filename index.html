@@ -20,16 +20,8 @@
 />
 </head>
 
-<body>
-
-    <header class="navbar container">
-  <nav aria-label="Main navigation">
-    <a href="#hero" class="nav-link nav-home active" aria-current="page">JT</a>
-    <a href="#projects" class="nav-link">Projects</a>
-    <a href="freelance.html" class="nav-link">Freelance</a>
-    <a href="#contact" class="nav-link">Contact</a>
-  </nav>
-</header>
+<body data-root-prefix="">
+<div data-include="{{root}}components/nav.html"></div>
 
 <main>
   <section class="hero container grid-12" id="hero">
@@ -76,146 +68,7 @@
   </section>
 
   
-<!-- PROJECTS SECTION -->
-<section class="projects container" id="projects">
-
-  <h2 class="projects-heading">PROJECTS</h2>
-
-  
-<div class="projects-grid">
-
-  <!-- LEFT COLUMN -->
-  <div class="projects-column">
-
-    <!-- CARD 1 -->
-    <a href="projects/newagesysit.html" class="project-card">
-      <img
-        src="assets/images/card_1.webp"
-        alt="Project preview"
-        class="project-image"
-      >
-
-      <span class="project-view-cursor" aria-hidden="true">
-        <span class="cursor-text">View</span>
-      </span>
-
-      <div class="project-info">
-        <h3 class="project-title">
-          NewAgeSysIT
-          <span class="project-subtitle">[Home Page]</span>
-        </h3>
-
-        <div class="project-meta">
-          <span class="project-category">Case Study</span>
-          <span class="project-category">UI Design</span>
-          
-        </div>
-      </div>
-    </a>
-
-    <!-- CARD 3 -->
-    <a href="#" class="project-card project-card--three">
-     <img
-        src="assets/images/card_3.webp"
-        alt="Project preview"
-        class="project-image"
-      >
-
-      <span class="project-view-cursor" aria-hidden="true">
-        <span class="cursor-text">View</span>
-      </span>
-
-      <div class="project-info">
-        <h3 class="project-title">
-          Project Three
-          <span class="project-subtitle">[Web Design]</span>
-        </h3>
-
-        <div class="project-meta">
-          <span class="project-category">Website</span>
-          <span class="project-category">UI Design</span>
-        </div>
-      </div>
-    </a>
-
-  </div>
-
-  <!-- RIGHT COLUMN -->
-  <div class="projects-column">
-
-    <!-- CARD 2 -->
-    <a href="#" class="project-card project-card--two">
-      <img
-        src="assets/images/card_2.webp"
-        alt="Project preview"
-        class="project-image"
-      >
-
-      <span class="project-view-cursor" aria-hidden="true">
-        <span class="cursor-text">View</span>
-      </span>
-
-      <div class="project-info">
-        <h3 class="project-title">
-          Project Two
-          <span class="project-subtitle">[Mobile App]</span>
-        </h3>
-
-        <div class="project-meta">
-          <span class="project-category">Case Study</span>
-          <span class="project-category">UX Design</span>
-        </div>
-      </div>
-    </a>
-
-    <!-- CARD 4 — TEXT ONLY -->
-    <div class="project-text-box">
-      <h2>
-       <span1> Not afraid to </span1>
-        <span2>BREAK</span2>
-        <span3>THE</span3> <span4> DESIGN RULES.</span4>
-      </h2>
-    </div>
-
-  </div>
-
-  <!-- CARD 5 — FULL WIDTH -->
-  <a href="#" class="project-card project-card--five">
-   <picture>
-  <!-- Mobile image (500px and below) -->
-  <source
-    media="(max-width: 600px)"
-    srcset="assets/images/card_5_mobile.webp"
-  >
-
-  <!-- Desktop image -->
-  <img
-    src="assets/images/card_5.webp"
-    alt="Featured project preview"
-    class="project-image"
-  >
-</picture>
-
-    <span class="project-view-cursor" aria-hidden="true">
-      <span class="cursor-text">View</span>
-    </span>
-
-    <div class="project-info">
-      <h3 class="project-title">
-        Project Five
-        <span class="project-subtitle">[Featured Project]</span>
-      </h3>
-
-      <div class="project-meta">
-        <span class="project-category">Case Study</span>
-        <span class="project-category">Experience Design</span>
-      </div>
-    </div>
-  </a>
-
-</div>
-
-</section>
+<div data-include="{{root}}components/projects.html" data-current-project=""></div>
 
 
 
@@ -315,58 +168,13 @@
 
 </main>
   
+<div data-include="{{root}}components/footer.html"></div>
+
     <script src="https://cdn.jsdelivr.net/npm/lenis@1.3.11/dist/lenis.min.js"></script>
     <script src="script.js" defer></script>
     
     
 </body>
 
-<footer class="site-footer">
-  <div class="footer-container">
 
-    <!-- Social Links -->
-    <div class="footer-socials">
-
-      <!-- Behance -->
-      <a href="YOUR_BEHANCE_URL"
-         target="_blank"
-         rel="noopener noreferrer"
-         class="social-link">
-
-        <img
-          src="assets/images/behance_logo.webp"
-          alt=""
-          class="social-icon"
-        >
-
-        <span>Behance</span>
-      </a>
-
-      <!-- LinkedIn -->
-      <a href="YOUR_LINKEDIN_URL"
-         target="_blank"
-         rel="noopener noreferrer"
-         class="social-link">
-
-        <img
-          src="assets/images/linkedin_logo.webp"
-          alt=""
-          class="social-icon"
-        >
-
-        <span>LinkedIn</span>
-      </a>
-
-    </div>
-
-    <!-- Email -->
-    <p class="footer-email">
-      Any Queries? Drop a mail to
-      <a href="mailto:heyitsjosef@gmail.com">
-        heyjosef@gmail.com
-      </a>
-    </p>
-
-  </div>
-</footer>
 </html>
