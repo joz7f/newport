@@ -30,6 +30,18 @@ async function loadComponents() {
   }));
 
   initializeSite();
+
+  // Sections included asynchronously may not exist when the browser first
+  // follows a URL hash (for example, index.html#projects from another page).
+  if (window.location.hash) {
+    const targetId = decodeURIComponent(window.location.hash.slice(1));
+    const target = document.getElementById(targetId);
+    if (target) {
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => target.scrollIntoView());
+      });
+    }
+  }
 }
 
 function initializeSite() {
@@ -90,6 +102,19 @@ function initializeSite() {
       const normalizePath = (value) => value.endsWith("/") ? `${value}index.html` : value;
       return normalizePath(path) === normalizePath(window.location.pathname);
     });
+  const normalizeNavPath = (path) => {
+    const normalized = decodeURIComponent(path).replace(/\/+$/, "");
+    return normalized || "/";
+  };
+  document.querySelectorAll(".navbar a.nav-link:not(.nav-home)").forEach((link) => {
+    const target = new URL(link.href);
+    if (target.hash) return;
+    const isCurrentPage = normalizeNavPath(target.pathname) === normalizeNavPath(window.location.pathname);
+    link.classList.toggle("active", isCurrentPage);
+    if (isCurrentPage) link.setAttribute("aria-current", "page");
+    else link.removeAttribute("aria-current");
+  });
+
   const navSections = sectionLinks.map((link) => document.querySelector(new URL(link.href).hash)).filter(Boolean);
   let activeSectionIndex = 0;
 
