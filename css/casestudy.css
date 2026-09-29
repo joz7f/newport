@@ -235,7 +235,7 @@
 .project-contributions__title {
   font: var(--type-desktop-h4-regular);
   color: var(--color-grey-900);
-  margin: 0 0 16px;
+  margin: 0 0 26px;
 }
 
 .project-contributions__list {
@@ -244,6 +244,76 @@
 }
 
 
+
+
+
+/* =====================================
+   PROJECT CONNECTING
+===================================== */
+
+.project-connecting {
+  width: 100%;
+  max-width: 820px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.project-connecting__title {
+ font: var(--type-desktop-h4-regular);
+  color: var(--color-grey-900);
+  margin: 0 0 16px;
+}
+
+/* Image wrapper */
+
+.project-connecting__wrapper {
+  width: 100%;
+  padding: 8px;
+  background: var(--color-blue-100);
+  box-sizing: border-box;
+  margin-top: 28px;
+}
+
+.project-connecting__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.project-connecting__grid img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1.5 / 1;
+  object-fit: cover;
+}
+
+/* Caption */
+
+.project-connecting__caption {
+ height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font: var(--type-desktop-paragraph-medium-bold);
+  text-align: center;
+  margin: 0;
+}
+
+/* Text content */
+
+.project-connecting__content h3 {
+  font: var(--type-desktop-paragraph-large-bold);
+  color: var(--color-grey-900);
+  margin-top: 36px;
+}
+
+.project-connecting__content p {
+  font: var(--type-desktop-paragraph-medium-regular);
+  color: var(--color-grey-900);
+  margin: 0 0 28px;
+  text-align: justify;
+}
 
 
 
@@ -274,6 +344,9 @@
     width: calc(100% - 48px);
   }
 
+   .project-connecting {
+    width: calc(100% - 48px);
+  }
   
 }
 
@@ -369,4 +442,37 @@
     line-height: 32px;
   }
 
+
+    /* =====================================
+   PROJECT CONNECTING
+===================================== */
+
+
+
+   .project-connecting {
+    width: calc(100% - 40px);
+  }
+
+  .project-connecting__title {
+    font-size: 24px;
+    line-height: 32px;
+  }
+
+  .project-connecting__wrapper {
+    padding: 6px;
+  }
+
+  .project-connecting__grid {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .project-connecting__caption {
+    height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  }
+
+  
 }
