@@ -785,6 +785,52 @@ a {
   outline-offset: 4px;
 }
 
+/* Current project shown in the related projects grid */
+.project-card--current {
+  cursor: not-allowed;
+  filter: grayscale(0.65);
+}
+
+.project-card--current::after {
+  background: rgba(20, 30, 45, 0.38);
+  opacity: 1;
+}
+
+.project-card--current .project-view-cursor {
+  display: none;
+}
+
+.project-card--current:hover,
+.project-card--current:focus-visible {
+  box-shadow: none;
+  outline: none;
+}
+
+.project-card--current:hover::after {
+  opacity: 1;
+}
+
+.project-card--current:hover .project-image {
+  transform: none;
+}
+
+.project-card--current:hover .project-info,
+.project-card--current:focus-visible .project-info {
+  transform: translateY(100%);
+}
+
+.project-current-label {
+  position: absolute;
+  z-index: 3;
+  top: 16px;
+  left: 16px;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.92);
+  color: var(--color-grey-900);
+  font: var(--type-desktop-caption-regular);
+}
+
 /* =========================================
    PROJECTS — MOBILE
 ========================================= */

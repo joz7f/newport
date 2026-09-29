@@ -386,6 +386,32 @@
 }
 
 
+/* The Payoff */
+
+.project-payoff {
+  width: 100%;
+  max-width: 820px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.project-payoff__title {
+  font: var(--type-desktop-h4-regular);
+  color: var(--color-grey-900);
+  margin: 0 0 20px;
+}
+
+.project-payoff__content p {
+  font: var(--type-desktop-paragraph-medium-regular);
+  color: var(--color-grey-900);
+  text-align: justify;
+  margin: 0 0 28px;
+}
+
+.project-payoff__content p:last-child {
+  margin-bottom: 0;
+}
+
 /* =====================================
    TABLET
 ===================================== */
@@ -421,6 +447,9 @@
     width: calc(100% - 48px);
   }
   
+   .project-payoff {
+    width: calc(100% - 48px);
+  }
 }
 
 /* =====================================
@@ -570,13 +599,21 @@
     overflow-wrap: break-word;
   }
 
-  
+
    .project-final-magic {
     width: calc(100% - 40px);
   }
 
   .project-final-magic__wrapper {
     padding: 6px;
+  }
+
+  .project-payoff {
+    width: calc(100% - 40px);
+  }
+
+  .project-payoff__content p {
+    text-align: left;
   }
 
 }
