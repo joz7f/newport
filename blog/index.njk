@@ -1,0 +1,124 @@
+{% set root = "../" %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Blog — Joseph Thomas</title>
+
+  <meta
+    name="description"
+    content="Thoughts, experiments, lessons and observations from my journey as a product designer."
+  >
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@200;300;400;500;700;800;900&family=Sora:wght@200;300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="/tokens.css">
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/css/blog.css">
+
+</head>
+
+<body class="blog-page">
+
+  {% include "components/nav.html" %}
+
+
+  <main class="blog-container">
+
+
+    <!-- =========================================
+         BLOG HERO
+    ========================================== -->
+
+    <section class="blog-hero">
+
+      <p class="blog-label">
+        JOURNAL
+      </p>
+
+      <h1 class="blog-title">
+        Thoughts, experiments & things I'm learning as a designer.
+      </h1>
+
+      <p class="blog-intro">
+        A collection of ideas, design experiments, lessons and observations from my journey as a product designer.
+      </p>
+
+    </section>
+
+
+    <!-- =========================================
+         ALL ARTICLES
+    ========================================== -->
+
+    <section class="blog-articles">
+
+      <h2 class="blog-section-title">
+        All articles
+      </h2>
+
+
+      <div class="blog-grid">
+
+        {% for post in collections.posts %}
+
+          <a href="{{ post.url }}" class="blog-card">
+
+
+            {% if post.data.image %}
+
+              <img
+                src="{{ post.data.image }}"
+                alt="{{ post.data.title }}"
+                class="blog-card-image"
+              >
+
+            {% endif %}
+
+
+            <div class="blog-card-meta">
+              {{ post.data.category }} · {{ post.data.readTime }}
+            </div>
+
+
+            <h3 class="blog-card-title">
+              {{ post.data.title }}
+            </h3>
+
+
+            <p class="blog-card-description">
+              {{ post.data.description }}
+            </p>
+
+
+          </a>
+
+        {% endfor %}
+
+      </div>
+
+    </section>
+
+
+  </main>
+
+
+  {% include "components/footer.html" %}
+
+
+  <script src="/script.js" defer></script>
+
+</body>
+
+</html>

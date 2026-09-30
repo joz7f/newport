@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>{{ title }} — Joseph Thomas</title>
+
+  <meta
+    name="description"
+    content="{{ description }}"
+  >
+
+  <link rel="stylesheet" href="/tokens.css">
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/css/blog.css">
+</head>
+
+<body class="blog-page">
+
+  {% set root = "../" %}
+  {% include "components/nav.html" %}
+
+  <main class="blog-post">
+
+    <header class="blog-post-header">
+
+      <div class="blog-post-meta">
+        <span>{{ category }}</span>
+        <span>·</span>
+        <span>{{ readTime }}</span>
+        <span>·</span>
+        <span>{{ date }}</span>
+      </div>
+
+      <h1>{{ title }}</h1>
+
+      <p class="blog-post-description">
+        {{ description }}
+      </p>
+
+    </header>
+
+    {% if image %}
+      <div class="blog-post-image">
+        <img src="{{ image }}" alt="">
+      </div>
+    {% endif %}
+
+    <article class="blog-post-content">
+      {{ content | safe }}
+    </article>
+
+  </main>
+
+  {% include "components/footer.html" %}
+
+  <script src="/script.js" defer></script>
+
+</body>
+</html>

@@ -1,0 +1,25 @@
+{
+  "name": "development",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+ "scripts": {
+  "start": "eleventy --serve",
+  "build": "eleventy"
+},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joz7f/newport.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/joz7f/newport/issues"
+  },
+  "homepage": "https://github.com/joz7f/newport#readme",
+  "devDependencies": {
+    "@11ty/eleventy": "^3.1.6"
+  }
+}
