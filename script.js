@@ -32,7 +32,7 @@ async function loadComponents() {
   initializeSite();
 
   // Sections included asynchronously may not exist when the browser first
-  // follows a URL hash (for example, index.html#projects from another page).
+  // follows a URL hash (for example, home.html#projects from another page).
   if (window.location.hash) {
     const targetId = decodeURIComponent(window.location.hash.slice(1));
     const target = document.getElementById(targetId);
