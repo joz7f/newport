@@ -12,6 +12,16 @@
     content="{{ description }}"
   >
 
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link
+  href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@200;300;400;500;700;800;900&family=Sora:wght@200;300;400;500;600;700;800;900&display=swap"
+  rel="stylesheet"
+>
+
+
   <link rel="stylesheet" href="/tokens.css">
   <link rel="stylesheet" href="/style.css">
   <link rel="stylesheet" href="/css/blog.css">
@@ -19,7 +29,7 @@
 
 <body class="blog-page">
 
-  {% set root = "../" %}
+  {% set root = "../../../" %}
   {% include "components/nav.html" %}
 
   <main class="blog-post">
@@ -31,7 +41,7 @@
         <span>·</span>
         <span>{{ readTime }}</span>
         <span>·</span>
-        <span>{{ date }}</span>
+        <span>{{ date | readableDate }}</span>
       </div>
 
       <h1>{{ title }}</h1>

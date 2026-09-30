@@ -37,6 +37,8 @@
   <main class="blog-container">
 
 
+
+
     <!-- =========================================
          BLOG HERO
     ========================================== -->
@@ -58,6 +60,56 @@
     </section>
 
 
+<!-- =========================================
+     FEATURED ARTICLE
+========================================== -->
+
+{% set featured = collections.posts | first %}
+
+<section class="blog-featured">
+
+  <div class="blog-featured-card">
+
+  <a
+    href="{{ featured.url }}"
+    class="blog-featured-link"
+    aria-label="Read {{ featured.data.title }}"
+  ></a>
+
+    {% if featured.data.image %}
+
+      <img
+        src="{{ featured.data.image }}"
+        alt="{{ featured.data.title }}"
+        class="blog-featured-image"
+      >
+
+    {% endif %}
+
+    <div class="blog-featured-content">
+
+      <div class="blog-card-meta">
+        {{ featured.data.category }} · {{ featured.data.readTime }}
+      </div>
+
+      <h2 class="blog-featured-title">
+        {{ featured.data.title }}
+      </h2>
+
+      <p class="blog-featured-description">
+        {{ featured.data.description }}
+      </p>
+
+     <span class="blog-read-more">
+  Read article →
+</span>
+
+    </div>
+
+  </div>
+
+</section>
+
     <!-- =========================================
          ALL ARTICLES
     ========================================== -->
@@ -73,7 +125,9 @@
 
         {% for post in collections.posts %}
 
-          <a href="{{ post.url }}" class="blog-card">
+  {% if post != featured %}
+
+    <a href="{{ post.url }}" class="blog-card">
 
 
             {% if post.data.image %}
@@ -102,9 +156,11 @@
             </p>
 
 
-          </a>
+             </a>
 
-        {% endfor %}
+  {% endif %}
+
+{% endfor %}
 
       </div>
 

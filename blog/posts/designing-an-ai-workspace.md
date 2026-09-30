@@ -16,9 +16,7 @@ This is where the introduction to your case study or article will go.
 ## The problem
 
 Explain the problem you were trying to solve.
-
 What are regulated teams dealing with?
-
 What makes working with AI different when the data is sensitive?
 
 ## My approach
@@ -34,18 +32,46 @@ You can talk about:
 - AI interactions
 - Design decisions
 
+<figure class="article-image">
+  <img
+    src="/assets/images/blog/featured.webp"
+    alt="AI workspace"
+  >
+  <figcaption>
+    Exploring the visual direction for the AI workspace
+  </figcaption>
+</figure>
+
 ## Designing the experience
 
 This section can contain your actual design thinking.
-
 Explain why you chose certain layouts, components, interactions, and visual decisions.
+
+<div class="article-image-row">
+
+  <figure>
+    <img
+      src="/assets/images/blog/featured.webp"
+      alt="First screen"
+    >
+    <figcaption>First screen</figcaption>
+  </figure>
+
+  <figure>
+    <img
+      src="/assets/images/blog/featured.webp"
+      alt="Second screen"
+    >
+    <figcaption>Second screen</figcaption>
+  </figure>
+
+</div>
 
 ## What I learned
 
-Talk about the biggest lessons from the project.
-
-What would you do differently next time?
+Talk about the biggest lessons from the project. What would you do differently next time?
 
 ---
 
 That's it for the first article.
+
