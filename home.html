@@ -90,7 +90,10 @@ permalink: /home.html
     </div>
 
     <!-- Contact Form -->
-    <form class="contact-form" id="contact-form">
+    <form
+  class="contact-form"
+  id="contact-form"
+>
 
       <!-- Name and Email -->
       <div class="contact-form-row">
@@ -135,10 +138,10 @@ permalink: /home.html
           <option value="" disabled selected>
             Select a project type
           </option>
-          <option value="UI/UX Design">UI/UX Design</option>
+          <option value="Mobile App Design">Mobile App Design</option>
           <option value="Website Design">Website Design</option>
-          <option value="Graphic Design">Graphic Design</option>
-          <option value="Motion Design">Motion Design</option>
+          <option value="Front-End Development">Front-End Development</option>
+          <option value="Logo & Branding">Logo & Branding</option>
           <option value="Other">Other</option>
         </select>
       </div>
@@ -159,11 +162,29 @@ permalink: /home.html
       </div>
 
       <!-- Submit -->
-      <button type="submit" class="contact-submit">
-        <span>Submit</span>
-      </button>
+      <button
+  type="submit"
+  class="contact-submit"
+  data-fs-submit-btn
+>
+  <span>Submit</span>
+</button>
 
     </form>
+
+    <div
+  class="contact-success"
+  data-fs-success
+  aria-live="polite"
+>
+</div>
+
+<div
+  class="contact-error"
+  data-fs-error
+  aria-live="polite"
+></div>
+
 
   </div>
 
@@ -172,7 +193,10 @@ permalink: /home.html
 </main>
   
 <div data-include="{{root}}components/footer.html"></div>
-
+  <script
+  src="https://unpkg.com/@formspree/ajax@1"
+  defer
+  ></script>
     <script src="https://cdn.jsdelivr.net/npm/lenis@1.3.11/dist/lenis.min.js"></script>
     <script src="script.js" defer></script>
     

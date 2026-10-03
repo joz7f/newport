@@ -1411,3 +1411,18 @@ body::before {
 body.scrolled::before {
   opacity: 1;
 }
+
+
+.contact-success,
+.contact-error {
+  display: none;
+}
+
+.contact-success[data-fs-active],
+.contact-error[data-fs-active] {
+  display: block;
+}
+
+.contact-submit.is-submitted {
+  cursor: default;
+}

@@ -149,3 +149,83 @@ function initializeSite() {
 }
 
 document.addEventListener("DOMContentLoaded", loadComponents, { once: true });
+
+
+/* =========================================
+   CONTACT FORM
+========================================= */
+
+const contactForm = document.querySelector("#contact-form");
+const contactSubmit = contactForm?.querySelector(".contact-submit");
+const contactSuccess = document.querySelector("[data-fs-success]");
+const contactError = document.querySelector("[data-fs-error]");
+
+if (contactForm && contactSubmit) {
+
+  contactForm.addEventListener("submit", async (event) => {
+
+    event.preventDefault();
+
+    const originalText = contactSubmit.querySelector("span");
+    contactSuccess?.removeAttribute("data-fs-active");
+    contactError?.removeAttribute("data-fs-active");
+
+    // Loading state
+    contactSubmit.disabled = true;
+    originalText.textContent = "Sending...";
+
+    const formData = new FormData(contactForm);
+
+    try {
+
+      const response = await fetch(
+        "https://formspree.io/f/xqparnqw",
+        {
+          method: "POST",
+          body: formData,
+          headers: {
+            Accept: "application/json"
+          }
+        }
+      );
+
+      if (response.ok) {
+
+        // Success state
+        originalText.textContent = "Submitted ✓";
+
+        contactSubmit.classList.add("is-submitted");
+        contactSuccess?.setAttribute("data-fs-active", "");
+
+        // Clear the form
+        contactForm.reset();
+
+      } else {
+
+        originalText.textContent = "Try Again";
+        if (contactError) {
+          contactError.textContent = "Something went wrong. Please try again.";
+          contactError.setAttribute("data-fs-active", "");
+        }
+
+        contactSubmit.disabled = false;
+
+      }
+
+    } catch (error) {
+
+      console.error("Form submission error:", error);
+
+      originalText.textContent = "Try Again";
+      if (contactError) {
+        contactError.textContent = "Unable to send your message. Please try again.";
+        contactError.setAttribute("data-fs-active", "");
+      }
+
+      contactSubmit.disabled = false;
+
+    }
+
+  });
+
+}
