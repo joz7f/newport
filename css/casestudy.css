@@ -412,6 +412,100 @@
   margin-bottom: 0;
 }
 
+.scanx-image {
+    width: 100%;
+    padding: 8px;
+    background: var( --color-foundation-white);
+    box-sizing: border-box;
+    margin-top: 28px;
+}
+
+
+.content-block {
+    width: 100%;
+    max-width: 820px;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+.section-block {
+    width: 100%;
+    max-width: 820px;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+.section-block__title{
+  font: var(--type-desktop-h4-regular);
+    color: var(--color-grey-900);
+    margin: 0 0 26px;
+}
+
+.section-block__caption {
+ height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font: var(--type-desktop-paragraph-medium-bold);
+  text-align: center;
+  margin: 0;
+}
+
+.section-block__description {
+  margin: 0;
+
+  font: var(--type-desktop-paragraph-medium-regular);
+  color: var(--color-grey-900);
+  text-align: justify;
+  
+  
+}
+
+.section-block__content {
+  font: var(--type-desktop-paragraph-medium-regular);
+  color: var(--color-grey-900);
+  text-align: justify;
+  margin: 0;
+}
+
+
+/* =========================================
+   APP SCREENS
+========================================= */
+
+.app-screens {
+   width: 820px;
+  max-width: 100%;
+  margin: 120px auto;
+}
+
+.app-screens__grid {
+  width: 100%;
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+
+  column-gap: 40px;
+  row-gap: 60px;
+
+  align-items: start;
+}
+
+.app-screen {
+  width: 100%;
+}
+
+.app-screen img {
+  display: block;
+  width: 100%;
+  height: auto;
+
+  object-fit: contain;
+}
+
+
+
 /* =====================================
    TABLET
 ===================================== */
@@ -670,4 +764,61 @@
     bottom: 20px;
     font-size: 20px;
   }
+
+
+   /* =====================================
+   section-block
+===================================== */
+
+
+
+   .section-block {
+    width: calc(100% - 40px);
+  }
+
+  .section-block__title {
+    font-size: 24px;
+    line-height: 32px;
+  }
+
+  .section-block__wrapper {
+    padding: 6px;
+  }
+
+  .section-block__grid {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .section-block__caption {
+    height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  }
+
+  .section-block__content {
+    text-align: left;
+  }
+
+   .app-screens {
+    width: calc(100% - 40px);
+  }
+
+  .app-screens__grid {
+    grid-template-columns: 1fr;
+
+    gap: 32px;
+
+    width: 100%;
+  }
+
+  .app-screen {
+    width: 100%;
+  }
+
+  .app-screen img {
+    width: 100%;
+  }
+
 }

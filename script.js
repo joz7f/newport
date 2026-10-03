@@ -15,7 +15,8 @@ async function loadComponents() {
           const disabledCard = document.createElement("div");
           disabledCard.className = `${card.className} project-card--current`;
           disabledCard.setAttribute("aria-disabled", "true");
-          disabledCard.setAttribute("aria-label", "NewAgeSysIT Home Page, current project");
+          const projectTitle = card.querySelector(".project-title")?.innerText.trim();
+          disabledCard.setAttribute("aria-label", `${projectTitle || "Project"}, current project`);
           disabledCard.innerHTML = card.innerHTML;
           const status = document.createElement("span");
           status.className = "project-current-label";
