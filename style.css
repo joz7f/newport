@@ -680,11 +680,11 @@ a {
   font: var(--type-desktop-h5-medium);
   display: flex;
   align-items: baseline;
-  gap: 8px;
+  gap: 4px;
 }
 
 .project-subtitle {
-  font: var(--type-desktop-paragraph-large-regular);
+  font: var(--type-desktop-paragraph-medium-regular);
   color: var(--color-grey-700);
 }
 
