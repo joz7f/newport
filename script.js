@@ -97,8 +97,8 @@ function initializeSite() {
     });
   });
 
- const normalizeSectionPath = (path) => {
-  if (path === "/" || path === "/index.html") {
+const normalizeSectionPath = (path) => {
+  if (path === "/" || path === "/index.html" || path === "/home") {
     return "/home.html";
   }
 
@@ -119,7 +119,7 @@ const sectionLinks = [
     const normalized = decodeURIComponent(path).replace(/\/+$/, "");
     return normalized || "/";
   };
-  
+
   document.querySelectorAll(".navbar a.nav-link").forEach((link) => {
   const target = new URL(link.href);
   if (target.hash) return;
