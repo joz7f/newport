@@ -5,6 +5,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("css");
   eleventyConfig.addPassthroughCopy("tokens.css");
   eleventyConfig.addPassthroughCopy("style.css");
+  eleventyConfig.addPassthroughCopy("about.css");
   eleventyConfig.addPassthroughCopy("script.js");
 
  eleventyConfig.addFilter("readableDate", function (value) {
