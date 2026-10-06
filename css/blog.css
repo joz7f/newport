@@ -35,7 +35,7 @@
   max-width: 760px;
   margin: 0;
 
-  font: var(--type-desktop-h4-bold);
+  font: var(--type-desktop-h4-medium);
   color: var(--color-grey-900);
 }
 
