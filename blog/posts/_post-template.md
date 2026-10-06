@@ -16,6 +16,16 @@ Write your introduction here.
 
 Explain the problem you were trying to solve.
 
+<figure class="article-image">
+  <img
+    src="/assets/images/blog/featured.webp"
+    alt="AI workspace"
+  >
+  <figcaption>
+    Exploring the visual direction for the AI workspace
+  </figcaption>
+</figure>
+
 ## My approach
 
 Explain how you approached the problem.
@@ -31,6 +41,29 @@ You can talk about:
 ## Designing the experience
 
 Explain the important design decisions you made.
+
+
+<div class="article-image-row">
+
+  <figure>
+    <img
+      src="/assets/images/blog/featured.webp"
+      alt="First screen"
+    >
+    <figcaption>First screen</figcaption>
+  </figure>
+
+  <figure>
+    <img
+      src="/assets/images/blog/featured.webp"
+      alt="Second screen"
+    >
+    <figcaption>Second screen</figcaption>
+  </figure>
+
+</div>
+
+
 
 ## What I learned
 
