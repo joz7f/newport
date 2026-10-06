@@ -406,6 +406,111 @@ a {
 
 
 /* =========================================
+   7b. HERO ACTIONS + RESUME BUTTON
+========================================= */
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 40px;
+}
+
+.hero-actions .button {
+  flex: 1;
+  width: auto;
+  min-width: 0;
+  margin-top: 0;
+}
+
+.resume-button {
+  position: relative;
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 48px;
+  height: 48px;
+
+  background: var(--surface-primary);
+  color: var(--text-primary);
+  border: 1px solid transparent;
+  border-radius: 20px;
+
+  transition:
+    background-color 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.resume-icon {
+  display: block;
+  overflow: visible;
+}
+
+.resume-button:hover,
+.resume-button:focus-visible {
+  background: var(--hero-accent);
+  border-color: var(--hero-accent);
+  transform: translateY(-2px);
+}
+
+.resume-button:focus-visible {
+  outline: 2px solid var(--text-primary);
+  outline-offset: 3px;
+}
+
+.resume-button:hover .resume-arrow,
+.resume-button:focus-visible .resume-arrow {
+  animation: resume-arrow-bounce 0.9s ease-in-out infinite;
+}
+
+@keyframes resume-arrow-bounce {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(2.5px); }
+}
+
+/* Tooltip */
+.resume-button::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: calc(100% + 10px);
+  right: 0;
+  transform: translateY(4px);
+
+  padding: 6px 12px;
+  border-radius: 8px;
+  background: var(--text-primary);
+  color: var(--surface-primary);
+
+  font: var(--type-desktop-paragraph-large-regular);
+  font-size: 14px;
+  line-height: 1.2;
+  white-space: nowrap;
+
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.resume-button:hover::after,
+.resume-button:focus-visible::after {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 500px) {
+  .hero-actions { margin-top: 28px; gap: 12px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .resume-button:hover .resume-arrow,
+  .resume-button:focus-visible .resume-arrow { animation: none; }
+  .resume-button, .resume-button::after { transition: none; }
+}
+
+/* =========================================
    8. ACCESSIBILITY
 ========================================= */
 
@@ -933,7 +1038,7 @@ a {
 
 .project-text-box h2 span2 {
   color: var(--color-orange-500);
-  font: var(--type-desktop-h3-bold);
+  font: var(--type-desktop-h4-bold);
 }
 
 .project-text-box h2 span3 {
