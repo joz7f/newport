@@ -119,14 +119,24 @@ const sectionLinks = [
     const normalized = decodeURIComponent(path).replace(/\/+$/, "");
     return normalized || "/";
   };
-  document.querySelectorAll(".navbar a.nav-link:not(.nav-home)").forEach((link) => {
-    const target = new URL(link.href);
-    if (target.hash) return;
-    const isCurrentPage = normalizeNavPath(target.pathname) === normalizeNavPath(window.location.pathname);
-    link.classList.toggle("active", isCurrentPage);
-    if (isCurrentPage) link.setAttribute("aria-current", "page");
-    else link.removeAttribute("aria-current");
-  });
+  
+  document.querySelectorAll(".navbar a.nav-link").forEach((link) => {
+  const target = new URL(link.href);
+  if (target.hash) return;
+
+  const currentPath = normalizeNavPath(window.location.pathname);
+  const targetPath = normalizeNavPath(target.pathname);
+
+  const isHome =
+    (currentPath === "/" || currentPath === "/home.html") &&
+    (targetPath === "/" || targetPath === "/home.html");
+
+  const isCurrentPage = isHome || targetPath === currentPath;
+
+  link.classList.toggle("active", isCurrentPage);
+  if (isCurrentPage) link.setAttribute("aria-current", "page");
+  else link.removeAttribute("aria-current");
+});
 
   const navSections = sectionLinks.map((link) => document.querySelector(new URL(link.href).hash)).filter(Boolean);
   let activeSectionIndex = 0;
