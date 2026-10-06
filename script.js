@@ -97,12 +97,24 @@ function initializeSite() {
     });
   });
 
-  const sectionLinks = [...document.querySelectorAll('.navbar a[href*="#"]')]
-    .filter((link) => {
-      const path = new URL(link.href).pathname;
-      const normalizePath = (value) => value.endsWith("/") ? `${value}index.html` : value;
-      return normalizePath(path) === normalizePath(window.location.pathname);
-    });
+ const normalizeSectionPath = (path) => {
+  if (path === "/" || path === "/index.html") {
+    return "/home.html";
+  }
+
+  return path.replace(/\/$/, "");
+};
+
+const sectionLinks = [
+  ...document.querySelectorAll('.navbar a[href*="#"]')
+].filter((link) => {
+  const path = new URL(link.href).pathname;
+
+  return normalizeSectionPath(path) ===
+    normalizeSectionPath(window.location.pathname);
+});
+
+
   const normalizeNavPath = (path) => {
     const normalized = decodeURIComponent(path).replace(/\/+$/, "");
     return normalized || "/";
@@ -120,19 +132,43 @@ function initializeSite() {
   let activeSectionIndex = 0;
 
   function updateActiveNav() {
-    if (!navSections.length) return;
-    const readingLine = window.innerHeight * 0.35;
-    const hysteresis = 24;
-    while (activeSectionIndex < navSections.length - 1 && navSections[activeSectionIndex + 1].getBoundingClientRect().top < readingLine - hysteresis) activeSectionIndex++;
-    while (activeSectionIndex > 0 && navSections[activeSectionIndex].getBoundingClientRect().top > readingLine + hysteresis) activeSectionIndex--;
-    const currentSection = navSections[activeSectionIndex];
-    sectionLinks.forEach((link) => {
-      const isCurrent = new URL(link.href).hash === `#${currentSection.id}`;
-      link.classList.toggle("active", isCurrent);
-      if (isCurrent) link.setAttribute("aria-current", "location");
-      else link.removeAttribute("aria-current");
-    });
+  if (!navSections.length) return;
+
+  const readingLine = window.innerHeight * 0.35;
+  const hysteresis = 24;
+
+  while (
+    activeSectionIndex < navSections.length - 1 &&
+    navSections[activeSectionIndex + 1]
+      .getBoundingClientRect().top < readingLine - hysteresis
+  ) {
+    activeSectionIndex++;
   }
+
+  while (
+    activeSectionIndex > 0 &&
+    navSections[activeSectionIndex]
+      .getBoundingClientRect().top > readingLine + hysteresis
+  ) {
+    activeSectionIndex--;
+  }
+
+  const currentSection = navSections[activeSectionIndex];
+
+  sectionLinks.forEach((link) => {
+    const isCurrent =
+      new URL(link.href).hash === `#${currentSection.id}`;
+
+    link.classList.toggle("active", isCurrent);
+
+    if (isCurrent) {
+      link.setAttribute("aria-current", "location");
+    } else {
+      link.removeAttribute("aria-current");
+    }
+  });
+}
+
   window.addEventListener("scroll", updateActiveNav, { passive: true });
   window.addEventListener("resize", updateActiveNav);
   updateActiveNav();
