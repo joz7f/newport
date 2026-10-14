@@ -64,7 +64,8 @@
      FEATURED ARTICLE
 ========================================== -->
 
-{% set featured = collections.posts | first %}
+{% set posts = collections.posts | sort(attribute="date", reverse=true) %}
+{% set featured = posts | first %}
 
 <section class="blog-featured">
 
@@ -123,9 +124,7 @@
 
       <div class="blog-grid">
 
-        {% for post in collections.posts %}
-
-  {% if post != featured %}
+        {% for post in posts %}
 
     <a href="{{ post.url }}" class="blog-card">
 
@@ -157,8 +156,6 @@
 
 
              </a>
-
-  {% endif %}
 
 {% endfor %}
 
