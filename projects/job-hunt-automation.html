@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Automating My Job Hunt — Personal Project</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@200;300;400;500;700;800;900&family=Sora:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/tokens.css">
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/css/casestudy.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lenis@1.3.11/dist/lenis.css">
+</head>
+<body>
+  <div data-include="/components/nav.html"></div>
+  <main>
+    <div class="project">
+      <section class="project-hero">
+        <div class="project-hero__header">
+          <div class="project-hero__meta">
+            <time class="project-hero__date" datetime="2026">2026</time>
+            <div class="project-hero__tags">
+              <span class="project-tag project-tag--case-study"><span class="project-tag__dot"></span>Case Study</span>
+              <span class="project-tag project-tag--ui"><span class="project-tag__dot"></span>Workflow Automation</span>
+            </div>
+          </div>
+          <div class="project-hero__intro">
+            <h1 class="project-hero__title">Automating My Job Hunt</h1>
+            <p class="project-hero__subtitle">Building my own job-search platform</p>
+          </div>
+        </div>
+        <div class="project-hero__visual">
+
+          <img
+            src="/assets/images/projects/jobhunt/hero.webp"
+            alt="infographic showing a workflow for automating job discovery and tracking"
+            class="project-hero__image"
+          >
+
+        </div>
+      </section>
+
+      <section class="project-details" aria-label="Project details">
+        <div class="project-details__item"><h3>Work</h3><p>Product Thinking<br>Workflow Automation<br>Case Study</p></div>
+        <div class="project-details__item"><h3>Project</h3><p>Self-initiated<br>Personal project</p></div>
+        <div class="project-details__item"><h3>Year</h3><p>2026</p></div>
+        <div class="project-details__item"><h3>Tools</h3><p>Python, APIs<br>Git Hub, Google Sheets</p></div>
+      </section>
+
+      <section class="project-story">
+        <div class="project-story__content">
+          <h2 class="project-story__title">Turning a tiring routine into a repeatable workflow</h2>
+          <p class="project-story__description">Job hunting sounds simple until you start doing it seriously. I was searching job boards, checking company career pages, evaluating openings, and recording useful details in Google Sheets. After five days of doing this manually, I realised the hard part was not only finding jobs. It was the repetitive research and data entry around every opportunity. I started building a Python workflow to automate discovery and organisation, so I could spend more time evaluating roles and applying.</p>
+        </div>
+        <div class="project-story__visual">
+
+          <img
+            src="/assets/images/projects/jobhunt/problem.webp"
+            alt="Joseph working on the job hunt automation project"
+            class="project-story__image"
+            loading="lazy"
+          >
+
+        </div>
+      </section>
+
+      <section class="project-contributions">
+        <h2 class="project-contributions__title">My role and responsibilities</h2>
+        <p class="section-block__description">I initiated the project to solve a problem I was experiencing myself. I researched possible approaches, evaluated data sources, built the workflow, and expanded it as I encountered technical limitations.</p>
+        <ul class="project-contributions__list">
+          <li>Defined the problem and project scope.</li>
+          <li>Researched automation approaches, APIs, and scraping feasibility.</li>
+          <li>Built Python collection and filtering scripts.</li>
+          <li>Integrated filtered job data with Google Sheets.</li>
+          <li>Tested job boards and different company career page structures.</li>
+          <li>Debugged and expanded the working prototype.</li>
+        </ul>
+      </section>
+
+      <section class="section-block">
+        <h2 class="section-block__title">The problem was the work around the search</h2>
+        <div class="section-block__content">
+          <p>Every relevant opening meant switching between job boards, company websites, and my tracker. I had to find the vacancy, check its details, assess whether it matched my requirements, then copy and organise the information.</p>
+          <p>That created three persistent challenges:</p>
+          <ul class="project-contributions__list">
+            <li><strong>Repetitive research:</strong> searching across multiple sources to discover relevant openings.</li>
+            <li><strong>Manual data entry:</strong> copying job details into the tracker one vacancy at a time.</li>
+            <li><strong>Poor scalability:</strong> more sources and opportunities made the manual process harder to maintain.</li>
+          </ul>
+          <p>I wanted to reduce the effort needed to populate the spreadsheet, rather than simply make a better spreadsheet.</p>
+        </div>
+      </section>
+
+      <section class="project-connecting">
+        <h2 class="project-connecting__title">Choosing a practical way to collect openings</h2>
+        <div class="project-connecting__content">
+          <h3>Two approaches, with different trade-offs</h3>
+          <p>I considered connecting services through a visual automation platform such as n8n. I was concerned about the cost of scaling that approach as I added sources and requirements. A custom Python solution gave me more control over collection, filtering, and spreadsheet updates, while letting me expand the system incrementally.</p>
+          <h3>Working around source limitations</h3>
+          <p>My first idea was to collect listings directly from LinkedIn and Naukri, but programmatic access to their job data was not straightforward. I explored sources with more accessible interfaces instead, starting with supported Greenhouse, Lever, and Ashby career listings. I also added JSearch, a third-party API that aggregates listings and provided another discovery route through its free tier.</p>
+          <p>This gave me a practical foundation without making the system depend on one source or requiring me to build every collector from scratch.</p>
+        </div>
+         <div class="project-hero__visual">
+
+          <img
+            src="/assets/images/projects/jobhunt/source.webp"
+            alt="infographic showing a workflow for automating job discovery and tracking"
+            class="project-hero__image"
+          >
+
+        </div>
+      </section>
+
+      <section class="section-block">
+        <h2 class="section-block__title">Designing the workflow</h2>
+        <div class="section-block__content">
+          <p>The system separates collection from filtering so I can add sources without rebuilding the whole process. The key decision was to automate discovery and organisation while keeping the final decision to apply in my hands.</p>
+        </div>
+        <div class="project-placeholder project-placeholder--wide" role="img" aria-label="Placeholder for a four stage job automation workflow"><div class="placeholder-flow"><div><b>01</b><strong>Job sources</strong><span>Career pages, boards, API</span></div><i aria-hidden="true">→</i><div><b>02</b><strong>Python collectors</strong><span>Retrieve available listings</span></div><i aria-hidden="true">→</i><div><b>03</b><strong>Filter and qualify</strong><span>Match current requirements</span></div><i aria-hidden="true">→</i><div><b>04</b><strong>Google Sheets</strong><span>Review and manage applications</span></div></div></div>
+      </section>
+
+      <section class="project-impact">
+        <h2 class="project-impact__title">The first successful run</h2>
+        <div class="project-impact__grid">
+          <div class="project-impact__item"><h3>~20</h3><p>openings passed the initial filters and were added to Google Sheets in the first successful run.</p></div>
+          <div class="project-impact__item"><h3>~10</h3><p>relevant openings are currently surfaced on average across different Indian cities in my runs.</p></div>
+        </div>
+        <p class="project-impact__note">These figures describe my prototype and current testing, not a benchmark or a guarantee of results.</p>
+      </section>
+
+      <section class="project-story project-story--stacked">
+        <div class="project-story__content">
+          <h2 class="project-story__title">Expanding coverage means adapting to messy pages</h2>
+          <p class="project-story__description">The first version worked, but it exposed the main scaling challenge: companies publish openings in different ways. Standard career platforms offer more consistent structures, while other organisations use recruitment systems or custom-built pages. Adding a source can mean writing and testing a source-specific crawler, checking how fields are presented, and accounting for changes over time.</p>
+          <p class="project-story__description">I have been testing additional Greenhouse portals, Zoho Recruit-powered pages, and custom HTML layouts. The goal is to pass each source’s results through the same filtering and spreadsheet workflow, while recognising that not every website can be scraped reliably.</p>
+        </div>
+        <div class="project-hero__visual">
+
+          <img
+            src="/assets/images/projects/jobhunt/filter.webp"
+            alt="infographic showing a workflow for automating job discovery and tracking"
+            class="project-hero__image"
+          >
+
+        </div>
+      </section>
+
+      <section class="section-block">
+        <h2 class="section-block__title">What changed in my process</h2>
+        <div class="section-block__content">
+          <p>The project has evolved from a manual Google Sheets tracker into a working job-discovery automation system. Multiple source types are supported, including Greenhouse, Lever, Ashby, and JSearch, with additional sources still being tested.</p>
+          <p>Google Sheets remains the central place to review openings and manage applications. The system does not decide whether a role is right for me, confirm that every vacancy is still active, or submit applications. It reduces the repetitive work before those decisions.</p>
+          <p>My workflow is now simpler: review the spreadsheet, evaluate relevant openings, and apply.</p>
+        </div>
+      </section>
+
+      <section class="project-contributions">
+        <h2 class="project-contributions__title">What I learned and what comes next</h2>
+        <ul class="project-contributions__list">
+          <li><strong>Source availability shapes the architecture.</strong> Access to job data differs between platforms.</li>
+          <li><strong>Modularity supports expansion.</strong> Separate collection, filtering, and sheet updates make new sources easier to add.</li>
+          <li><strong>Real-world data is messy.</strong> Titles, locations, dates, and other fields vary across sources.</li>
+          <li><strong>Automation needs validation.</strong> Passing a filter does not guarantee a good fit or an active listing.</li>
+          <li><strong>Reducing friction matters more than volume.</strong> The goal is a search process I can manage consistently.</li>
+        </ul>
+        <p class="section-block__description"><strong>Next:</strong> expand career-page coverage, improve extraction across layouts, reduce duplicates, check whether vacancies remain active, refine qualification, and measure time saved against the original manual process.</p>
+      </section>
+
+      <section class="project-payoff">
+        <h2 class="project-payoff__title">A useful system that can keep improving</h2>
+        <div class="project-payoff__content">
+          <p>I started this project because I was tired of spending so much time managing my job search manually. What began as a personal workaround has become an ongoing exercise in product thinking, automation, and iterative problem-solving.</p>
+          <p>For me, building a useful product means identifying a real friction point, solving the most important part first, learning from the limitations, and improving the solution through real use.</p>
+        </div>
+      </section>
+
+      <div data-include="/components/projects.html" data-current-project="job-hunt-automation"></div>
+    </div>
+  </main>
+  <button id="scrollToTop" class="scroll-to-top" aria-label="Scroll to top">↑</button>
+  <div data-include="/components/footer.html"></div>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.3.11/dist/lenis.min.js"></script>
+  <script src="/script.js" defer></script>
+</body>
+</html>

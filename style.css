@@ -761,6 +761,24 @@ a {
   transition: transform 0.4s ease;
 }
 
+/* Branded placeholder card image for projects without final artwork */
+.project-card-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background:
+    radial-gradient(ellipse at 78% 22%, rgba(255,255,255,.95), transparent 34%),
+    linear-gradient(135deg, var(--color-blue-100), #eef1ff 52%, var(--color-green-100));
+}
+
+.project-card-placeholder span {
+  z-index: 1;
+  padding: 20px;
+  font: var(--type-desktop-h4-regular);
+  color: var(--color-dark-blue-900);
+}
+
 /* Information panel */
 
 .project-info {
